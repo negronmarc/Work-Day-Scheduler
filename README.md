@@ -8,13 +8,11 @@ This project was created to allow users to save events for each hour of a normal
 - [Preview](#preview)
 - [Launch](#launch)
 
-## Usage
-Travelers who want to see the weather outlook for multiple cities so that they can plan accordingly.
 ## Technologies
 - HTML
 - CSS
 - JavaScript
-- Moment
+- Moment.js
 ## Preview
 ![Img](assets/images/preview.PNG)
 ## Launch
