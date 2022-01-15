@@ -25,7 +25,7 @@ function schedulerColor() {
 function clickBtn() {
   var btn = $(this);
   var blockEl = btn.parent();
-  var inputEl = find("textarea");
+  var inputEl = blockEl.find("textarea");
   var inputValue = inputEl[0].value;
   var hour = blockEl.attr("id");
   localStorage.setItem(hour, inputValue);
