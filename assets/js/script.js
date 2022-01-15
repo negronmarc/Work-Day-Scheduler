@@ -8,40 +8,35 @@ console.log(currentTime);
 
 function schedulerColor() {
   $(".time-block").each(function () {
-      var timeBlock = parseInt($(this).attr("id").split("hour")[1]);
+    var timeBlock = parseInt($(this).attr("id").split("-")[1]);
 
-      if (timeBlock < currentTime) {
-          $(this).addClass("past");
-      }
-      else if (timeBlock === currentTime) {
-          $(this).addClass("present");
-      }
-      else {
-          $(this).addClass("future");
-      }
-  })
-};
-
-schedulerColor();
+    if (timeBlock < currentTime) {
+      $(this).addClass("past");
+    } else if (timeBlock === currentTime) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("future");
+    }
+  });
+}
 
 // Local storage
 
-$(".saveBtn").on("click", clickBtn);
-
-function clickBtn () {
+function clickBtn() {
   var btn = $(this);
   var blockEl = btn.parent();
-  var inputEl = blockEl.find("textarea");
+  var inputEl = find("textarea");
   var inputValue = inputEl[0].value;
   var hour = blockEl.attr("id");
   localStorage.setItem(hour, inputValue);
-};
+}
 
-for (var hour = 9; hour < 18;  hour++) {
+for (var hour = 9; hour < 18; hour++) {
   var blockEl = $("#hour-" + hour);
   var inputEl = blockEl.find("textarea");
   inputEl[0].value = localStorage.getItem("hour-" + hour);
 }
 
+$(".saveBtn").on("click", clickBtn);
 
-
+schedulerColor();
